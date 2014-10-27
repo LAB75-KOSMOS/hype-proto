@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- <html manifest="index.appcache"> -->
+<html>
+<head>
+	<title>Hype</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<!-- MINIMALISTIC HTML UI -->
+	<link rel="stylesheet" href="./layout.css">
+
+</head>
+<body>
+
+	<header>
+		<div class="wrapper-logo">
+			<h1>Hype</h1>
+			<span>The Hyperboria Directory</span>
+		</div>
+		<div class="div"></div>
+	</header>
+
+	<menu class="hidden">
+		<li class="query"><input data-send="query" type="text"></li>
+		<li><button data-view="search">Search</button></li>
+		<li><button data-view="explore">Explore</button></li>
+		<li><button data-view="create">Create</button></li>
+	</menu>
+
+	<article class="active" id="view-search">
+		<div>
+			<input data-send="query" type="text">
+			<br>
+			<br>
+			<button data-api="search" data-view="results">Search</button>
+			<button data-api="search" data-view="explore">Explore</button>
+
+			<div class="wrapper-hint">
+				<span>Search the link directory for tags or explore it to find interesting stuff.</span>
+				<br>
+				<ul id="suggestions"><li>engine html5</li><li>engine game javascript</li></ul>
+			</div>
+		</div>
+	</article>
+
+	<article id="view-results">
+		<div>
+			<input data-send="query" type="text">
+		</div>
+		<ul data-receive="results"></ul>
+	</article>
+
+	<article id="view-explore">EXPLORE VIEW</article>
+
+	<article id="view-create">
+		<div>
+			<input data-api="unique" data-send="identifier" data-receive="identifier" type="text">
+			<input data-send="browser" type="text" placeholder="http://lycheejs.org/index.html">
+			<input data-send="mobile" type="text" placeholder="http://m.lycheejs.org/index.html">
+			<input data-send="tags" type="text">
+			<br>
+			<br>
+			<button data-api="create">Create</button>
+		</div>
+	</article>
+
+	<script src="./hype.js"></script>
+	<script src="./hype.api.js"></script>
+</body>
+</html>
